@@ -1,97 +1,118 @@
-<！doctype html>
-<超文本标记语言朗="en">
-<头>
-    <元charset="UTF-8">
-    <元姓名="viewport" 内容="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李氏族</title>
     <style>
-        /* 全局样式 */
         body {
-            font-family:Arial,sans-serif;
-            margin:0;
-            padding: 0;padding: 0;
-            background-color: #f0f8ff; /* 浅蓝色背景 */background-color: #f0f8ff; /* 浅蓝色背景 */
-            color: #333;color: #333;
-        }}
-
-        /* 容器样式 *//* 容器样式 */
-        .container {{
-            max-width: 1200px;max-width: 1200px;
-            margin: 0 auto;margin: 0 auto;
-            padding: 20px;padding: 20px;
-        }}
-
-        /* 标题样式 *//* 标题样式 */
-        h1 {{
-            text-align: center;text-align: center;
-            color: #4a90e2; /* 深蓝色标题 */color: #4a90e2; /* 深蓝色标题 */
-            margin-bottom: 20px;margin-bottom: 20px;
-        }}
-
-        /* 按钮样式 *//* 按钮样式 */
-        .button {{
-            display: inline-block;display: inline-block;
-            padding: 10px 20px;padding: 10px 20px;
-            background-color: #4a90e2;background-color: #4a90e2;
-            color: white;color: white;
-            text-decoration: none;text-decoration: none;
-            border-radius: 5px;border-radius: 5px;
-            transition: background-color 0.3s ease;transition: background-color 0.3s ease;
-        }}
-
-        .button:hover {hover {
-            background-color: #3478c2; /* 按钮悬停时的颜色变化 */background-color: #3478c2; /* 按钮悬停时的颜色变化 */
-        }}
-
-        /* 文本内容样式 *//* 文本内容样式 */
-        p {{
-            line-height: 1.6;line-height: 1.6;
-            text-align: justify;text-align: justify;
-        }}
-
-        /* 图片样式 *//* 图片样式 */
-        .image-container {{
-            text-align: center;text-align: center;
-            margin: 30px 0;margin: 30px 0;
-        }}
-
-        .image-container img {{
-            max-width: 100%;max-width: 100%;
-            height: auto;height: auto;
-            border-radius: 10px;border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }}
-
-        /* 底部样式 *//* 底部样式 */
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #4a90e2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
             color: white;
-            margin-top: 30px;
+            padding: 1em 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .about-me, .skills, .experience, .education {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e0e0e0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        article {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>李氏族</h1>
-        <p>
-            这里虽然没有什么好玩的,但我还是时不时笑出声来 
-        </p>
-
-        <div class="image-container">
-            <img src="https://easylink.cc/pr4hl3/800x400" alt=" hub img not404">
-        </div>
-
-        <p>
-            当你看到这里,那么你该知道,下午该干啥了吧 
-        </p>
-
-        <a href="#" class="button">刷新</a>
-    </div>
-
+    <header>
+        <h1>简介</h1>
+    </header>
+    <main>
+        <section class="profile">
+            <img src="your-photo.jpg" alt=" hub not 404">
+            <h2>群聊[微信]</h2>
+            <p> 代号：[118]</p>
+            <p>职业：[无]</p>
+            <p>联系方式：[ qq1451606675]</p>
+        </section>
+        <section class="about-me">
+            <h2>关于网站</h2>
+            <p> github usa 2025 hsa lsz</p>
+        </section>
+        <section class="skills">
+            <h2>作息时间</h2>
+            <ul>
+                <li>中午打麻将 </li>
+                <li>下午斗地主</li>
+                <li>晚上聊聊天 </li>
+                <!-- ... -->
+            </ul>
+        </section>
+        <section class="experience">
+            <h2>好 完 的</h2>
+            <article>
+                <h3>特别好</h3>
+                <p>。。。</p>
+                <p>游玩时间：[中午] - [下午]</p>
+                <p>游玩内容：各种这样</p>
+            </article>
+            <!-- 。。。 -->
+        </section>
+        <section class="education">
+            <h2>联系</h2>
+            <article>
+                <h3>方式</h3>
+                <p>qq：[1451606675]</p>
+                <p>电话：[184------07]</p>
+                <p>建站时间：[2025]</p>
+            </article>
+            <!-- 。。。 -->
+        </section>
+    </main>
     <footer>
-        &copy; 2025 Hsa ahuyi 51668
+        <p>&copy; [2025] [HSA]. All rights reserved.</p>
     </footer>
 </body>
 </html>
