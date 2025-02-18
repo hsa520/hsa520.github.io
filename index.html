@@ -64,6 +64,25 @@
             bottom: 0;
             font-size: 0.9em;
         }
+        .timer-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .timer-display {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .timer-buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +90,7 @@
         <h1>简介</h1>
     </header>
     <main>
+        <!-- 页面主要内容 -->
         <section class="profile">
             <h2>群聊[微信]</h2>
             <p>代号：[118]</p>
@@ -84,7 +104,6 @@
             <h1>点击按钮到社区</h1>
             <a href="https://hsa520.github.io/社区" target="_blank" class="button">访问社区</a>
         </div>
-                </section>
         <div class="container">
             <h1>点击按钮到我</h1>
             <a href="https://1310hsah.github.io" target="_blank" class="button">访问我</a>
@@ -94,7 +113,6 @@
             <ul>
                 <li>上午打麻将</li>
                 <li>下午斗地主</li>
-                <!-- ... -->
             </ul>
         </section>
         <section class="experience">
@@ -103,7 +121,6 @@
                 <h3>特别好</h3>
                 <p>游玩内容：各种这样</p>
             </article>
-            <!-- 。。。 -->
         </section>
         <section class="education">
             <h2>联系</h2>
@@ -113,20 +130,69 @@
                 <p>电话：[184------07]</p>
                 <p>建站时间：[2025]</p>
             </article>
-            <!-- 。。。 -->
-            <div style="text-align: center; margin: 20px 0;">
-    <h2 style="color: #ff6347; font-size: 24px; font-weight: bold;">热烈庆祝《哪吒之魔童闹海》票房突破119亿元人民币！</h2>
-    <img src="https://img12.360buyimg.com/ddimg/jfs/t1/252344/21/19333/104801/67a96e86F61c878b3/5fd298988d316daa.jpg" alt="庆祝图片" style="width: 300px; height: auto; margin: 20px 0;">
-    <p style="color: #4caf50; font-size: 18px;">这不仅是电影的胜利，更是中国文化的辉煌！</p>
-</div>
         </section>
+        <div style="text-align: center; margin: 20px 0;">
+            <h2 style="color: #ff6347; font-size: 24px; font-weight: bold;">热烈庆祝《哪吒之魔童闹海》票房突破119亿元人民币！</h2>
+            <img src="https://img12.360buyimg.com/ddimg/jfs/t1/252344/21/19333/104801/67a96e86F61c878b3/5fd298988d316daa.jpg" alt="庆祝图片" style="width: 300px; height: auto; margin: 20px 0;">
+            <p style="color: #4caf50; font-size: 18px;">这不仅是电影的胜利，更是中国文化的辉煌！</p>
+        </div>
         <section class="about-me">
             <h2>LF简介</h2>
             <p>LF是一个致力于分享知识和经验的社区。我们的目标是通过交流和合作，提升每个人的技能和视野。</p>
         </section>
+
+        <!-- 计时器部分 -->
+        <div class="timer-container">
+            <h2>计时器</h2>
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            <div class="timer-buttons">
+                <button id="start-btn">开始</button>
+                <button id="stop-btn">停止</button>
+                <button id="reset-btn">重置</button>
+            </div>
+        </div>
     </main>
     <footer>
         <p>版权所有 &copy; 2025 LF</p>
     </footer>
+
+    <script>
+        let seconds = 0;
+        let intervalId = null;
+
+        function updateTimeDisplay() {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            document.getElementById('timer-display').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        document.getElementById('start-btn').addEventListener('click', () => {
+            if (intervalId === null) {
+                intervalId = setInterval(() => {
+                    seconds++;
+                    updateTimeDisplay();
+                }, 1000);
+            }
+        });
+
+        document.getElementById('stop-btn').addEventListener('click', () => {
+            if (intervalId !== null) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        });
+
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId = null;
+            seconds = 0;
+            updateTimeDisplay();
+        });
+
+        // 初始化时间显示
+        updateTimeDisplay();
+    </script>
 </body>
 </html>
