@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,13 +44,30 @@
 <body>
     <div class="container">
         <h1>404</h1>
- <p>您的请求-√解析-√服务器-X页面  并没有找到页面，请刷新重试</p>
+        <p>您的请求-√解析-√服务器-X页面 并没有找到页面，请刷新重试</p>
         <!-- 添加 onclick 事件，点击后弹出提示框 -->
-        <a href="#" class="button" onclick="alert('反馈成功');">反馈</a>
+        <a href="#" class="button" id="feedbackButton">反馈</a>
     </div>
     <div class="container">
         <h1>点击按钮跳转到主页</h1>
         <a href="https://hsa520.github.io" target="_blank" class="button">跳转</a>
     </div>
+
+    <!-- 新增的 JavaScript 代码 -->
+    <script>
+        // 获取反馈按钮
+        const feedbackButton = document.getElementById("feedbackButton");
+        let clickCount = 0; // 记录点击次数
+
+        feedbackButton.addEventListener("click", function(event) {
+            clickCount += 1; // 每次点击增加计数
+            if (clickCount === 1) {
+                alert("反馈成功");
+            } else {
+                alert("不要重复反馈");
+                event.preventDefault(); // 阻止重复点击
+            }
+        });
+    </script>
 </body>
 </html>
