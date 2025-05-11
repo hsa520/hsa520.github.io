@@ -83,6 +83,28 @@
             border: none;
             border-radius: 5px;
         }
+        .fade-in-box {
+            animation: fadeIn 1.5s ease-in-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .iframe-container {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -90,7 +112,6 @@
         <h1>简介</h1>
     </header>
     <main>
-        <!-- 页面主要内容 -->
         <section class="profile">
             <h2>群聊[微信]</h2>
             <p>代号：[118]</p>
@@ -117,10 +138,19 @@
         </section>
         <section class="experience">
             <h2>好 完 的</h2>
-            <article>
+            <article class="fade-in-box">
                 <h3>特别好</h3>
                 <p>游玩内容：各种这样</p>
             </article>
+            <div class="iframe-container fade-in-box">
+                <iframe src="https://www.cx-coding.com/projects/37609/embed" 
+                        allowtransparency="true" 
+                        width="485" 
+                        height="402" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        allowfullscreen></iframe>
+            </div>
         </section>
         <section class="education">
             <h2>联系</h2>
@@ -141,7 +171,6 @@
             <p>LF是一个致力于分享知识和经验的社区。我们的目标是通过交流和合作，提升每个人的技能和视野。</p>
         </section>
 
-        <!-- 计时器部分 -->
         <div class="timer-container">
             <h2>计时器</h2>
             <div class="timer-display" id="timer-display">00:00:00</div>
@@ -191,7 +220,6 @@
             updateTimeDisplay();
         });
 
-        // 初始化时间显示
         updateTimeDisplay();
     </script>
 </body>
